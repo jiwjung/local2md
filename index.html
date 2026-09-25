@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" data-i18n-content="page.description">
+  <title data-i18n="page.title">local2md</title>
+  <link rel="icon" type="image/png" href="local2md_180.png">
+  <link rel="apple-touch-icon" href="local2md_180.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js?v=033c9f9b7a86f82803f971f4c0ba67260e534b3cd6736f8bf3e2aa56e3a83f87"></script>
+</head>
+<body class="localizing">
+  <a class="skip-link" href="#converter" data-i18n="nav.skip"></a>
+  <header class="header container">
+    <a class="brand" href="./" data-i18n-aria-label="nav.home"><img class="brand-icon" src="local2md_180.png" alt="" width="32" height="32">local2md</a>
+    <span class="header-caption" data-i18n="nav.caption"></span>
+    <a class="nav-link" href="#formats"><span data-i18n="nav.formats"></span><span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="workspace container" aria-labelledby="page-title">
+      <div class="hero">
+        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 id="page-title" data-i18n="hero.title"></h1>
+        <p class="hero-description" data-i18n="hero.description"></p>
+        <p class="privacy-badge"><svg class="icon" aria-hidden="true"><use href="#lock"/></svg><span data-i18n="hero.privacy"></span></p>
+      </div>
+      <section id="converter" class="converter" data-i18n-aria-label="converter.label" tabindex="-1">
+        <input id="file-input" class="sr-only" type="file" tabindex="-1" data-i18n-aria-label="file.label">
+        <div id="idle-panel" class="panel dropzone">
+          <div class="document-icon"><svg aria-hidden="true"><use href="#document"/></svg></div>
+          <h2 id="drop-title" data-i18n="drop.title"></h2>
+          <p data-i18n="drop.description"></p>
+          <button id="choose-file" class="button primary" type="button"><svg class="icon" aria-hidden="true"><use href="#folder"/></svg><span data-i18n="action.choose"></span></button>
+          <p class="file-hint" data-i18n="drop.hint"></p>
+        </div>
+        <div id="converting-panel" class="panel centered" hidden>
+          <div class="spinner" role="progressbar" data-i18n-aria-label="progress.label"></div>
+          <h2 data-i18n="progress.title"></h2>
+          <p class="file-name" data-file-name></p><p class="metadata" data-file-size></p>
+          <p data-i18n="progress.description"></p>
+          <button id="cancel" class="button secondary" type="button" data-i18n="action.cancel"></button>
+        </div>
+        <div id="success-panel" class="panel result" hidden>
+          <div class="result-heading"><span class="status-icon success" aria-hidden="true">✓</span><h2 id="success-title" tabindex="-1" data-i18n="success.title"></h2></div>
+          <div class="result-summary"><div class="file-summary"><p class="file-name" data-file-name></p><p class="metadata"><span data-file-size></span> · <span id="character-count"></span></p></div>
+            <div class="actions"><button id="download" class="button primary" type="button"><svg class="icon" aria-hidden="true"><use href="#download-icon"/></svg><span data-i18n="action.download"></span></button><button id="reset" class="button secondary" type="button" data-i18n="action.reset"></button></div>
+          </div>
+          <aside id="warnings" class="warning" hidden><h3 data-i18n="warning.title"></h3><ul id="warning-list"></ul></aside>
+          <div class="preview-heading"><label for="preview" data-i18n="preview.title"></label><label class="wrap-label"><input id="wrap" type="checkbox" checked><span data-i18n="preview.wrap"></span></label></div>
+          <p id="preview-notice" class="metadata" hidden data-i18n="preview.notice"></p>
+          <textarea id="preview" readonly spellcheck="false" wrap="soft"></textarea>
+          <p class="preview-caption" data-i18n="preview.caption"></p>
+        </div>
+        <div id="error-panel" class="panel error-panel" hidden>
+          <span class="status-icon error" aria-hidden="true">!</span>
+          <h2 id="error-title" role="alert"></h2><p id="error-description"></p>
+          <div class="actions"><button id="choose-again" class="button primary" type="button" data-i18n="action.chooseAgain"></button><button id="retry" class="button secondary" type="button" hidden data-i18n="action.retry"></button><a class="text-link" href="#formats"><span data-i18n="action.formats"></span> <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <p id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <div class="workflow" data-i18n-aria-label="workflow.label"><span><b>01</b> <span data-i18n="action.choose"></span></span><span class="workflow-line" aria-hidden="true"></span><span><b>02</b> <span data-i18n="workflow.convert"></span></span><span class="workflow-line" aria-hidden="true"></span><span><b>03</b> <span data-i18n="action.download"></span></span></div>
+    </section>
+    <section id="formats" class="information" aria-labelledby="formats-title">
+      <div class="container information-inner">
+        <div class="section-heading"><p class="eyebrow" data-i18n="formats.eyebrow"></p><h2 id="formats-title" data-i18n="formats.title"></h2><p data-i18n="formats.description"></p></div>
+        <div class="format-grid">
+          <article class="format-card"><h3><span class="small-dot" aria-hidden="true"></span><span data-i18n="formats.local"></span></h3><p class="metadata" data-i18n="formats.localDescription"></p>
+            <dl class="format-list"><div><dt data-i18n="formats.documents"></dt><dd>PDF <span>DOCX</span> HWP <span>HWPX</span> HTML <span>EPUB</span></dd></div><div><dt data-i18n="formats.data"></dt><dd>XLSX <span>CSV</span> XLS <span>JSON</span> XML <span>TSV</span></dd></div><div><dt data-i18n="formats.presentations"></dt><dd>PPTX <span>RSS</span> Atom <span>IPYNB</span></dd></div><div><dt data-i18n="formats.archives"></dt><dd>ZIP</dd></div><div><dt data-i18n="formats.images"></dt><dd>JPEG <span>PNG</span><small data-i18n="formats.imageNote"></small></dd></div></dl>
+          </article>
+          <article class="format-card limited"><h3><svg class="icon" aria-hidden="true"><use href="#info"/></svg><span data-i18n="formats.provider"></span></h3><p class="metadata" data-i18n="formats.providerDescription"></p><div class="chips"><span data-i18n="formats.scannedPdf"></span><span>MSG</span><span data-i18n="formats.audio"></span><span data-i18n="formats.ocr"></span><span data-i18n="formats.imageDescription"></span></div><p class="provider-note" data-i18n="formats.providerNote"></p><p class="metadata" data-i18n="formats.limit"></p></article>
+        </div>
+        <aside class="privacy-notice" aria-labelledby="privacy-title"><svg class="icon" aria-hidden="true"><use href="#lock"/></svg><div><h3 id="privacy-title" data-i18n="privacy.title"></h3><p data-i18n="privacy.description"></p></div></aside>
+      </div>
+    </section>
+  </main>
+  <footer class="container footer"><p><strong>local2md</strong><span data-i18n="footer.tagline"></span></p><nav data-i18n-aria-label="footer.references"><a href="https://github.com/jiwjung" target="_blank" rel="noopener"><span data-i18n="footer.creator"></span> ↗</a></nav></footer>
+  <noscript><p class="warning" lang="en">Please enable JavaScript to load your browser language and convert documents.</p></noscript>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3"/></symbol>
+    <symbol id="document" viewBox="0 0 64 64"><path d="M35 6H15a3 3 0 0 0-3 3v46a3 3 0 0 0 3 3h34a3 3 0 0 0 3-3V23L35 6Z"/><path d="M35 6v17h17M22 31h12M22 39h7M39 34v16m-7-7 7 7 7-7"/></symbol>
+    <symbol id="folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l3 3h6a2 2 0 0 1 2 2v2M3 7h6l3 3h9l-3 11H3V7Z"/></symbol>
+    <symbol id="download-icon" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v2"/></symbol>
+  </defs></svg>
+</body>
+</html>
