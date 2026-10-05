@@ -5,6 +5,8 @@
 
 Files in. Markdown out. Nothing uploaded.
 
+https://md.jwjung.org
+
 ## 주요 특징
 
 - **완전한 로컬 처리** — 파일과 변환 결과를 서버로 보내거나 자동 저장하지 않습니다. 모든 처리는 브라우저 안에서 이루어집니다.
