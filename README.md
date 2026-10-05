@@ -43,7 +43,7 @@ Files in. Markdown out. Nothing uploaded.
 ## 기술 스택
 
 - 순수 HTML/CSS/JavaScript (빌드 도구 없음)
-- [MarkItDown](https://github.com/microsoft/markitdown) 기반 변환기 (`markitdown.js`, WebAssembly)
+- MarkItDown 기반 변환기 (`markitdown.js`, WebAssembly)
 
 ## 파일 구성
 
@@ -53,7 +53,7 @@ Files in. Markdown out. Nothing uploaded.
 | `app.js` | 변환 흐름, 드래그 앤 드롭, UI 상태 관리 |
 | `converter-utils.js` | 파일 검증, 크기·이름 포맷, 오류 분류 |
 | `i18n.js` | 로케일 로딩 및 번역 적용 |
-| `markitdown.js` | MarkItDown 변환 라이브러리 |
+| `markitdown.js` | 변환 라이브러리 |
 | `styles.css` | 스타일시트 |
 | `locales/` | 언어별 번역 (`en`, `ja`, `ko`, `zh-Hans`, `zh-Hant`) |
 | `assets/` | 정적 자원 |
